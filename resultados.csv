@@ -1,0 +1,4 @@
+Malla,Tipo,Experimento,Delta_T_C,Puntos_raw,Puntos_limpios,mAguaInicial_kg,mAguaFin_kg,mButanoInicial_kg,mButanoFin_kg,Eficiencia_%
+malla1,calentamiento,exp1,59.8000,366,363,0.772020,0.726720,0.249730,0.233780,-12.7709
+malla1,evaporacion,exp1,58.4000,259,259,0.726720,0.620400,0.233780,0.216500,30.9704
+malla2,calentamiento,exp1,62.2000,310,308,0.788070,0.750000,0.204690,0.190760,-19.1494
