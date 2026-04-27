@@ -31,10 +31,12 @@ def clean_jumps(values: list[float], threshold: float | None = None) -> list[flo
 def apply_cleaning(exp: ExperimentData) -> None:
     """
     Aplica la depuración de saltos a un ExperimentData en su lugar.
-    También calcula delta_t (max − min) sobre los valores limpios.
+    También calcula delta_t como último registro − primer registro.
     """
     exp.clean_values = clean_jumps(exp.raw_values)
-    if exp.clean_values:
-        exp.delta_t = max(exp.clean_values) - min(exp.clean_values)
+    if len(exp.clean_values) >= 2:
+        exp.delta_t = exp.clean_values[-1] - exp.clean_values[0]
+    elif len(exp.clean_values) == 1:
+        exp.delta_t = 0.0
     else:
         exp.delta_t = 0.0
